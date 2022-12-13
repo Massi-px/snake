@@ -1,21 +1,21 @@
-export default class point {
+export default class Point {
     #x
     #y
     constructor(p_x, p_y) {
-      this.#x = 0
-      this.#y = 0
+      this.#x = p_x
+      this.#y = p_y
     }
 
     get x() {
       return this.#x
     }
 
-    set x(p_x) {
-      this.#x = p_x
+    get y() {
+        return this.#y
     }
 
-    get y() {
-      return this.#y
+    set x(p_x) {
+      this.#x = p_x
     }
 
     set y(p_y) {

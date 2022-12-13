@@ -1,7 +1,7 @@
 import Point from "./Point.js";
 
-export default class SnakePart extends Point{
+export default class SnakePart extends Point {
     constructor(p_x,p_y) {
-        super(Point);
+        super(p_x, p_y);
     }
 }
