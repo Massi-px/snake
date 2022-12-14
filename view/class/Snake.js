@@ -52,23 +52,17 @@ export default class Snake {
     }
 
     move(p_eat){
-        if(p_eat){
             this.pushHead();
-        }
-        else{
-            this.pushHead();
+        if(!p_eat){
             this.dropTail();
         }
     }
 
     set direction(p_direction){
-        if(direction.include(p_direction)){
-            if(this.#direction %2 !== p_direction %2){
+        if(direction.include(p_direction)
+            && this.#direction %2 !== p_direction %2){
                 this.#direction = p_direction;
-            }
-        }
-        else{
-            console.log("Invalid direction");
+
         }
     }
 
@@ -76,15 +70,18 @@ export default class Snake {
         return (this.head.x === p_point.x && this.head.y === p_point.y)
     }
 
-    touchParts(){
+    touchParts(p_point){
         let touch = false
         let i = 0
         let part = this.#parts[i]
-        while (!touch && i < this.#parts.length-1) {
+        while (!touch && i < this.#parts.length-1 ) {
             part = this.#parts[i]
-            touch = this.touchPoint(part)
+            if(part !== p_point) {
+                touch = (part.x === p_point.x && part.y === p_point.y)
+            }
             i++
         }
+
         return touch
 /*
         for(const part of p_parts){
