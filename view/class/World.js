@@ -27,14 +27,6 @@ export default class World{
         return this.#height
     }
 
-    get snake(){
-        return this.#snake
-    }
-
-    get apple(){
-        return this.#apple
-    }
-
 
     sendDirection(direction){
         this.#buffer.push(direction);
